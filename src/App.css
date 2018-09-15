@@ -1,0 +1,115 @@
+
+.panel {
+  display: inline-block;
+  height: 80vh;
+  border: 1px solid black;
+}
+
+.sidePanelOpenned {
+  width: 15%; background-color: green;
+}
+
+.sidePanelClosed {
+  width: 1%; background-color: yellowgreen;
+}
+
+.centralPanelShrinked {
+  width: 69%; background-color: orange;
+}
+
+.centralPanelExpandedOneSide {
+  width: 83%; background-color: green;
+}
+
+@keyframes sidePanelClosing {
+  from { width: 15%; background-color: green; }
+  to { width: 1%; background-color: yellowgreen; }
+}
+
+.sidePanelClosing {
+  animation-name: sidePanelClosing;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+
+@keyframes sidePanelOpenning {
+  from { width: 1%; background-color: yellowgreen; }
+  to { width: 15%; background-color: green; }
+}
+
+.sidePanelOpenning {
+  animation-name: sidePanelOpenning;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes centralPanelExpandingOneSide {
+  from { width: 69%; background-color: orange; }
+  to { width: 83%; background-color: orange; }
+}
+
+.centralPanelExpandingOneSide {
+  animation-name: centralPanelExpandingOneSide;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes centralPanelShrinkingOneSide {
+  from { width: 83%; background-color: orange; }
+  to { width: 69%; background-color: orange; }
+}
+.centralPanelShrinkingOneSide {
+  animation-name: centralPanelShrinkingOneSide;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes centralPanelExpandingTwoSides {
+  from { width: 83%; background-color: orange; }
+  to { width: 97%; background-color: orange; }
+}
+
+.centralPanelExpandingTwoSides {
+  animation-name: centralPanelExpandingTwoSides;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes centralPanelShrinkingTwoSides {
+  from { width: 97%; background-color: orange; }
+  to { width: 83%; background-color: orange; }
+}
+
+.centralPanelShrinkingTwoSides {
+  animation-name: centralPanelShrinkingTwoSides;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+
+.buttonLeft {
+  position: absolute;
+  transform: translate(12vw, 35vh);
+}
+
+.buttonRight {
+  position: absolute;
+  transform: translate(82.5vw, 35vh) rotate(180deg);
+}
+
+@keyframes buttonLeftMovingLeft {
+  from { position: absolute; transform: translate(12vw, 35vh); }
+  to { position: absolute; transform: translate(-2vw, 35vh); }
+}
+
+@keyframes buttonLeftRotatingLeft {
+  from { position: absolute;  transform: rotate(0deg); }
+  to { position: absolute; transform: rotate(180deg); }
+}
+
+.buttonLeftMovingLeft {
+  animation-name: buttonLeftMovingLeft;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
