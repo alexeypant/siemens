@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getAnimationClasses, getNextUIState } from './components/animation';
 import './App.css';
-import SidePanel from './components/SidePanel';
+import Panel from './components/Panel';
 import ArrowButton from './components/ArrowButton';
 
 class App extends Component {
@@ -12,8 +12,7 @@ class App extends Component {
     }
   }
 
-  onCloseLeftClick = (e) => {
-   // e.preventDefault();
+  onCloseLeftClick = () => {
     const previous = this.state.uiState.next;
     const next = getNextUIState(previous, 'leftSideButton');
     this.setState({
@@ -24,7 +23,7 @@ class App extends Component {
     });
   }
 
-  onCloseRightClick = (e) => {
+  onCloseRightClick = () => {
     const previous = this.state.uiState.next;
     const next = getNextUIState(previous, 'rightSideButton');
     this.setState({
@@ -47,9 +46,9 @@ class App extends Component {
         <ArrowButton handleClick={this.onCloseLeftClick} className={leftButtonClasses} />
         <ArrowButton handleClick={this.onCloseRightClick} className="buttonRight" />
         <div className="row">
-          <div className={leftPanelClasses}></div>
-          <div className={centralPanelClasses}></div>
-          <SidePanel className={rightPanelClasses} />
+          <Panel className={leftPanelClasses} />
+          <Panel className={centralPanelClasses} />
+          <Panel className={rightPanelClasses} />
         </div>
       </div>
     );
