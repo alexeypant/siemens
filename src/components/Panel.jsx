@@ -1,10 +1,11 @@
 import React from 'react';
 
-export default class SidePanel extends React.Component {
+export default class Panel extends React.Component {
   render(){
     const { className } = this.props;
     return(
         <div className={className}>
+         {this.props.children}
         </div>
     );
   }
