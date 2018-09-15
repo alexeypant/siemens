@@ -1,13 +1,16 @@
 import React from 'react';
 
+
 export default class Panel extends React.Component {
+
   render(){
-    const { className } = this.props;
+    const { className, children } = this.props;
     return(
         <div className={className}>
-         {this.props.children}
+          <div>
+            {children}
+          </div>
         </div>
     );
   }
-
 }

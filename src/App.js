@@ -3,6 +3,8 @@ import { getAnimationClasses, getNextUIState } from './components/animation';
 import './App.css';
 import Panel from './components/Panel';
 import ArrowButton from './components/ArrowButton';
+import Visual from './components/Visual';
+
 
 class App extends Component {
   state = {
@@ -43,8 +45,9 @@ class App extends Component {
 
     return (
       <div>
+        <Visual />
         <ArrowButton handleClick={this.onCloseLeftClick} className={leftButtonClasses} />
-        <ArrowButton handleClick={this.onCloseRightClick} className="buttonRight" />
+        <ArrowButton handleClick={this.onCloseRightClick} className="buttonAbs buttonRight" />
         <div className="row">
           <Panel className={leftPanelClasses} />
           <Panel className={centralPanelClasses} />

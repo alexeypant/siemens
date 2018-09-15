@@ -6,18 +6,19 @@ export const getAnimationClasses = (previous, next, uiComponent) => {
         LeftPanel: 'panel sidePanelOpenned',
         RightPanel: 'panel sidePanelOpenned',
         CentralPanel: 'panel centralPanelShrinked',
-        leftButton: 'buttonLeft',
+        leftButton: 'buttonAbs buttonLeftPanelOpen',
       },
       LeftOpenRightClosed: {
         LeftPanel: 'panel sidePanelOpenned',
         RightPanel: 'panel sidePanelClosing',
         CentralPanel: 'panel centralPanelExpandingOneSide',
+        leftButton: 'buttonAbs buttonLeftPanelOpen',
       },
       LeftClosedRightOpen: {
         LeftPanel: 'panel sidePanelClosing',
         RightPanel: 'panel sidePanelOpenned',
         CentralPanel: 'panel centralPanelExpandingOneSide',
-        leftButton: 'buttonLeftMovingLeft',
+        leftButton: 'buttonAbs buttonLeftMovingLeft',
       }
     },
     LeftOpenRightOpen: {
@@ -25,11 +26,13 @@ export const getAnimationClasses = (previous, next, uiComponent) => {
         LeftPanel: 'panel sidePanelOpenned',
         RightPanel: 'panel sidePanelClosing',
         CentralPanel: 'panel centralPanelExpandingOneSide',
+        leftButton: 'buttonAbs buttonLeftPanelOpen'
       },
       LeftClosedRightOpen: {
         LeftPanel: 'panel sidePanelClosing',
         RightPanel: 'panel sidePanelOpenned',
         CentralPanel: 'panel centralPanelExpandingOneSide',
+        leftButton: 'buttonAbs buttonLeftMovingLeft',
       }
     },
     LeftOpenRightClosed: {
@@ -37,11 +40,13 @@ export const getAnimationClasses = (previous, next, uiComponent) => {
         LeftPanel: 'panel sidePanelOpenned',
         RightPanel: 'panel sidePanelOpenning',
         CentralPanel: 'panel centralPanelShrinkingOneSide',
+        leftButton: 'buttonAbs buttonLeftPanelOpen',
       },
       LeftClosedRightClosed: {
         LeftPanel: 'panel sidePanelClosing',
         RightPanel: 'panel sidePanelClosed',
         CentralPanel: 'panel centralPanelExpandingTwoSides',
+        leftButton: 'buttonAbs buttonLeftMovingLeft',
       }
     },
     LeftClosedRightClosed: {
@@ -49,11 +54,13 @@ export const getAnimationClasses = (previous, next, uiComponent) => {
         LeftPanel: 'panel sidePanelOpenning',
         RightPanel: 'panel sidePanelClosed',
         CentralPanel: 'panel centralPanelShrinkingTwoSides',
+        leftButton: 'buttonAbs buttonLeftMovingRight',
       },
       LeftClosedRightOpen: {
         LeftPanel: 'panel sidePanelClosed',
         RightPanel: 'panel sidePanelOpenning',
         CentralPanel: 'panel centralPanelShrinkingTwoSides',
+        leftButton: 'buttonAbs buttonLeftPanelClosed',
       }
     },
     LeftClosedRightOpen: {
@@ -61,11 +68,13 @@ export const getAnimationClasses = (previous, next, uiComponent) => {
         LeftPanel: 'panel sidePanelClosed',
         RightPanel: 'panel sidePanelClosing',
         CentralPanel: 'panel centralPanelExpandingTwoSides',
+        leftButton: 'buttonAbs buttonLeftPanelClosed',
       },
       LeftOpenRightOpen: {
         LeftPanel: 'panel sidePanelOpenning',
         RightPanel: 'panel sidePanelOpenned',
         CentralPanel: 'panel centralPanelShrinkingOneSide',
+        leftButton: 'buttonAbs buttonLeftMovingRight',
       }
     }
   }

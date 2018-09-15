@@ -1,7 +1,7 @@
 
 .panel {
   display: inline-block;
-  height: 80vh;
+  height: 10vh;
   border: 1px solid black;
 }
 
@@ -88,28 +88,45 @@
 }
 
 
-.buttonLeft {
+.buttonAbs {
   position: absolute;
+}
+
+.buttonLeftPanelOpen {
   transform: translate(12vw, 35vh);
 }
 
+.buttonLeftPanelClosed {
+  transform: translate(-2vw, 35vh);
+}
+
 .buttonRight {
-  position: absolute;
   transform: translate(82.5vw, 35vh) rotate(180deg);
 }
 
 @keyframes buttonLeftMovingLeft {
-  from { position: absolute; transform: translate(12vw, 35vh); }
-  to { position: absolute; transform: translate(-2vw, 35vh); }
+  from { transform: translate(12vw, 35vh); }
+  to { transform: translate(-2vw, 35vh); }
+}
+
+@keyframes buttonLeftMovingRight {
+  from { transform: translate(-2vw, 35vh); }
+  to { transform: translate(12vw, 35vh); }
 }
 
 @keyframes buttonLeftRotatingLeft {
-  from { position: absolute;  transform: rotate(0deg); }
-  to { position: absolute; transform: rotate(180deg); }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(180deg); }
 }
 
 .buttonLeftMovingLeft {
   animation-name: buttonLeftMovingLeft;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.buttonLeftMovingRight {
+  animation-name: buttonLeftMovingRight;
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
