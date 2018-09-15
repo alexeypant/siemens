@@ -2,8 +2,8 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 class NewTaskForm extends React.Component {
-  addPoint = (values) => {
-    this.props.addPoint(values);
+  addPoint = (value) => {
+    this.props.addPoint(value);
     this.props.reset();
   }
 
@@ -13,7 +13,7 @@ class NewTaskForm extends React.Component {
         <div className="form-group mx-3">
           <Field name="text" required component="input" type="text" />
         </div>
-        <button type="submit" className="btn btn-primary btn-sm">Add</button>
+        {/* <button type="submit" className="btn btn-primary btn-sm">Add</button> */}
       </form>
     );
   }
