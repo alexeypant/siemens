@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { getAnimationClasses, getNextUIState } from './components/animation';
 import './App.css';
 import Panel from './components/Panel';
-import ArrowButton from './components/ArrowButton';
+import ArrowButtonLeft from './components/ArrowButtonLeft';
+import ArrowButtonRight from './components/ArrowButtonRight';
 import Visual from './components/Visual';
 
 
@@ -48,13 +49,13 @@ class App extends Component {
       <div>
         <div className="row">
           <Panel className={leftPanelClasses}>
-            <ArrowButton handleClick={this.onCloseLeftClick} className={leftButtonClasses} />  
+            <ArrowButtonLeft handleClick={this.onCloseLeftClick} className={leftButtonClasses} />  
           </Panel>
           <Panel className={centralPanelClasses}>
             <Visual />
           </Panel>
           <Panel className={rightPanelClasses}>
-            <ArrowButton handleClick={this.onCloseRightClick} className={rightButtonClasses} />
+            <ArrowButtonRight handleClick={this.onCloseRightClick} className={rightButtonClasses} />
           </Panel>
         </div>
       </div>
