@@ -3,32 +3,23 @@ import * as d3 from 'd3';
 
 export default class Graph extends React.Component{
 
-    componentDidMount(){
-        this.updateGraph();
-    }
+  componentDidUpdate(){
+    this.updateGraph();
+  }
 
-    componentWillUpdate(){
-        this.updateGraph();
-    }
+  
 
     updateGraph = () => {
-        var data = [
-            {date: "2000", value: "100"},
-            {date: "2001", value: "110"},
-            {date: "2002", value: "45"},
-          ];
+
+        const { points } = this.props;
+
+        var data = points.map(p => {
+          return { date: p.date.getSeconds(), value: p.value }
+        });
           
           var width = 500;
           var height = 300;
           var margin = 50;
-          
-        
-          /* Format Data */
-          var parseDate = d3.timeParse("%Y");
-          data.forEach(function(d) { 
-            d.date = parseDate(d.date);
-            d.value = +d.value;
-          });
           
           
           /* Scale */
@@ -41,6 +32,12 @@ export default class Graph extends React.Component{
             .range([height-margin, 0]);
           
           
+          // removing previous SVG
+          const node = document.getElementById("graph");
+          while (node && node.firstChild) {
+            node.removeChild(node.firstChild);
+          }
+
           /* Add SVG */
           var svg = d3.select("#graph").append("svg")
             .attr("width", (width+margin)+"px")
@@ -107,6 +104,6 @@ export default class Graph extends React.Component{
     }
 
     render(){
-        return <div id="graph"></div>;
+      return <div id="graph"></div>;
     }
 };

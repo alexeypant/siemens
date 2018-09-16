@@ -10,12 +10,6 @@ class NewTaskForm extends React.Component {
   render() {
     return (
       <div className="newPointForm">
-        {/* <form className="form-inline" onSubmit={this.props.handleSubmit(this.addPoint)}>
-          <div className="form-group mx-3">
-            <Field name="text" required component="input" type="text" />
-          </div>
-        </form> */}
-
         <form onSubmit={this.props.handleSubmit(this.addPoint)}>
           <div className="form-row align-items-center">
             <div className="col-auto">
@@ -24,7 +18,7 @@ class NewTaskForm extends React.Component {
                 <div className="input-group-prepend">
                   <div className="input-group-text">Value:</div>
                 </div>
-                <Field name="text" required component="input" type="text" />
+                <Field name="value" required component="input" type="text" />
               </div>
             </div>
           </div>

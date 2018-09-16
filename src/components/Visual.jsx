@@ -1,23 +1,12 @@
 import React from 'react';
 import NewPointFormContainer from '../containers/NewPointForm';
 import PointsListContainer from '../containers/PointsList';
-import Graph from './Graph';
+import Graph from '../containers/Graph';
 
 const Visual = () => (
     <div className="visual">
       <div className="chart">
-        {/* <Graph /> */}
-        sdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfa
-        sdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfa
-        sdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfa
-        sdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfa
-        sdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfa
-        sdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfa
-        sdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfa
-        sdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfa
-        sdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfa
-        sdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfasdflksjldkjflksjldfksldkfjslkdjlsldkfjlskfjlksdfa
-
+        <Graph />
       </div>
       <div className="points">
         <NewPointFormContainer />
