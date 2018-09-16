@@ -42,16 +42,20 @@ class App extends Component {
     const rightPanelClasses = getAnimationClasses(previous, next, 'RightPanel');
     const centralPanelClasses = getAnimationClasses(previous, next, 'CentralPanel');
     const leftButtonClasses = getAnimationClasses(previous, next, 'leftButton');
+    const rightButtonClasses = getAnimationClasses(previous, next, 'rightButton');
 
     return (
       <div>
-        <Visual />
-        <ArrowButton handleClick={this.onCloseLeftClick} className={leftButtonClasses} />
-        <ArrowButton handleClick={this.onCloseRightClick} className="buttonAbs buttonRight" />
         <div className="row">
-          <Panel className={leftPanelClasses} />
-          <Panel className={centralPanelClasses} />
-          <Panel className={rightPanelClasses} />
+          <Panel className={leftPanelClasses}>
+            <ArrowButton handleClick={this.onCloseLeftClick} className={leftButtonClasses} />  
+          </Panel>
+          <Panel className={centralPanelClasses}>
+            <Visual />
+          </Panel>
+          <Panel className={rightPanelClasses}>
+            <ArrowButton handleClick={this.onCloseRightClick} className={rightButtonClasses} />
+          </Panel>
         </div>
       </div>
     );

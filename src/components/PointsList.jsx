@@ -14,7 +14,7 @@ export default class PointsList extends React.Component {
         {points.map(({ id, text, time }) => (
           <li key={id} className="list-group-item d-flex justify-content-end">
             <div className="mr-auto">{`${time} - ${text}`}</div>
-            <button className="btn border-0 p-0 app-remove-task" onClick={this.removePoint(id)}>x</button>
+            <button className="btn btn-secondary" onClick={this.removePoint(id)}>REMOVE</button>
           </li>
         ))}
       </ul>);
@@ -26,7 +26,7 @@ export default class PointsList extends React.Component {
       return null;
     }
     return (
-      <div className="mt-3">
+      <div className="pointsList">
         {this.renderPoints()}
       </div>
     );

@@ -1,29 +1,30 @@
 
 .panel {
   display: inline-block;
-  height: 10vh;
+  height: 100vh;
   border: 1px solid black;
+  position: relative;
 }
 
 .sidePanelOpenned {
-  width: 15%; background-color: green;
+  width: 15%; background-color: grey;
 }
 
 .sidePanelClosed {
-  width: 1%; background-color: yellowgreen;
+  width: 1%; background-color: whitesmoke;
 }
 
 .centralPanelShrinked {
-  width: 69%; background-color: orange;
+  width: 70%; background-color: orange;
 }
 
 .centralPanelExpandedOneSide {
-  width: 83%; background-color: green;
+  width: 84%; background-color: green;
 }
 
 @keyframes sidePanelClosing {
-  from { width: 15%; background-color: green; }
-  to { width: 1%; background-color: yellowgreen; }
+  from { width: 15%; background-color: grey; }
+  to { width: 1%; background-color: whitesmoke; }
 }
 
 .sidePanelClosing {
@@ -34,8 +35,8 @@
 
 
 @keyframes sidePanelOpenning {
-  from { width: 1%; background-color: yellowgreen; }
-  to { width: 15%; background-color: green; }
+  from { width: 1%; background-color: whitesmoke; }
+  to { width: 15%; background-color: grey; }
 }
 
 .sidePanelOpenning {
@@ -45,8 +46,8 @@
 }
 
 @keyframes centralPanelExpandingOneSide {
-  from { width: 69%; background-color: orange; }
-  to { width: 83%; background-color: orange; }
+  from { width: 70%; background-color: orange; }
+  to { width: 84%; background-color: orange; }
 }
 
 .centralPanelExpandingOneSide {
@@ -56,8 +57,8 @@
 }
 
 @keyframes centralPanelShrinkingOneSide {
-  from { width: 83%; background-color: orange; }
-  to { width: 69%; background-color: orange; }
+  from { width: 84%; background-color: orange; }
+  to { width: 70%; background-color: orange; }
 }
 .centralPanelShrinkingOneSide {
   animation-name: centralPanelShrinkingOneSide;
@@ -66,8 +67,8 @@
 }
 
 @keyframes centralPanelExpandingTwoSides {
-  from { width: 83%; background-color: orange; }
-  to { width: 97%; background-color: orange; }
+  from { width: 84%; background-color: orange; }
+  to { width: 98%; background-color: orange; }
 }
 
 .centralPanelExpandingTwoSides {
@@ -77,8 +78,8 @@
 }
 
 @keyframes centralPanelShrinkingTwoSides {
-  from { width: 97%; background-color: orange; }
-  to { width: 83%; background-color: orange; }
+  from { width: 98%; background-color: orange; }
+  to { width: 84%; background-color: orange; }
 }
 
 .centralPanelShrinkingTwoSides {
@@ -90,43 +91,145 @@
 
 .buttonAbs {
   position: absolute;
+  top: 40%;
+  z-index: 2;
 }
 
 .buttonLeftPanelOpen {
-  transform: translate(12vw, 35vh);
+  right: 0;
+}
+
+
+.buttonRightPanelOpen {
+  left: 0;
 }
 
 .buttonLeftPanelClosed {
-  transform: translate(-2vw, 35vh);
+  right: -30px;
 }
 
-.buttonRight {
-  transform: translate(82.5vw, 35vh) rotate(180deg);
+.buttonRightPanelClosed {
+  left: -30px;
 }
+
 
 @keyframes buttonLeftMovingLeft {
-  from { transform: translate(12vw, 35vh); }
-  to { transform: translate(-2vw, 35vh); }
+  from { right: 0px; }
+  to { right: -10px; }
+}
+
+@keyframes buttonRightMovingRight {
+  from { left: 0; }
+  to { left: -10px; }
 }
 
 @keyframes buttonLeftMovingRight {
-  from { transform: translate(-2vw, 35vh); }
-  to { transform: translate(12vw, 35vh); }
+  from { right: -10px; }
+  to { right: 0px; }
+}
+
+@keyframes buttonRightMovingLeft {
+  from { left: -10px; }
+  to { left: 0; }
 }
 
 @keyframes buttonLeftRotatingLeft {
   from { transform: rotate(0deg); }
-  to { transform: rotate(180deg); }
+  to { transform: rotate(540deg); }
+}
+
+@keyframes buttonRightRotatingLeft {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(540deg); }
+}
+
+@keyframes buttonLeftRotatingRight {
+  from { transform: rotate(540deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes buttonRightRotatingRight {
+  from { transform: rotate(540deg); }
+  to { transform: rotate(0deg); }
 }
 
 .buttonLeftMovingLeft {
-  animation-name: buttonLeftMovingLeft;
+  animation-name: buttonLeftMovingLeft, buttonLeftRotatingLeft;
   animation-duration: 2s;
   animation-fill-mode: forwards;
 }
 
 .buttonLeftMovingRight {
-  animation-name: buttonLeftMovingRight;
+  animation-name: buttonLeftMovingRight, buttonLeftRotatingRight;
   animation-duration: 2s;
   animation-fill-mode: forwards;
+}
+
+.buttonRightMovingRight {
+  animation-name: buttonRightMovingRight, buttonRightRotatingRight;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.buttonRightMovingLeft {
+  animation-name: buttonRightMovingLeft, buttonRightRotatingLeft;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+
+.visual {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.chart {
+  display: inline-block;
+  background-color: whitesmoke;
+  width: 70%;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid gray;
+}
+
+.points {
+  display: inline-block;
+  position: relative;
+  background-color: whitesmoke;
+  width: 30%;
+  height: 100%;
+  border: 1px solid gray;
+}
+
+.newPointForm {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.pointsList {
+  position: absolute;
+  display: block;
+  top: 40px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.line {
+  stroke: steelblue;
+  stroke-width: 2;
+  fill: none;
+}
+
+.axis path {
+  stroke: black;
+}
+
+.circle .text {
+  fill: red;
+  font-size: 11px;
+  font-family: Sans-Serif, Arial;
 }
