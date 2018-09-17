@@ -2,11 +2,11 @@
   "name": "siemens",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://alexeypant.github.io/siemens",
   "dependencies": {
     "ajv": "^6.5.3",
-    "c3": "^0.6.7",
-    "classnames": "^2.2.6",
     "d3": "^5.7.0",
+    "gh-pages": "^2.0.0",
     "lodash": "^4.17.11",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
@@ -21,6 +21,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
   }
 }
