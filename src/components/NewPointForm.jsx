@@ -28,9 +28,6 @@ class NewTaskForm extends React.Component {
   }
 }
 
-
-
-
 export default reduxForm({
   form: 'newTask',
 })(NewTaskForm);

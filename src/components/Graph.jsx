@@ -14,7 +14,6 @@ export default class Graph extends React.Component{
   updateGraph = () => {
 
     const { points } = this.props;
-
     const data = points.map(p => {
       const date = new Date(p.date).getTime();
       return { date, value: p.value }
@@ -49,7 +48,6 @@ export default class Graph extends React.Component{
       .append('g')
       .attr("transform", `translate(${margin}, ${margin})`);
     
-    
     /* Add line into SVG */
     const line = d3.line()
       .x(d => xScale(d.date))
@@ -58,7 +56,6 @@ export default class Graph extends React.Component{
     svg.append('path')
       .attr('class', 'line')
       .attr('d', line(data));
-    
     
     /* Add circles in the line */
     svg.append("g")
@@ -86,7 +83,6 @@ export default class Graph extends React.Component{
       .attr("cx", d => xScale(d.date))
       .attr("cy", d => yScale(d.value))
       .attr("r", 4);
-    
     
     /* Add Axis into SVG */
     const xAxis = d3.axisBottom(xScale).ticks(5);

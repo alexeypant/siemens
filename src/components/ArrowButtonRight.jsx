@@ -1,5 +1,5 @@
 import React from 'react';
-import { getNextUIState } from './animation';
+import { getNextUIState } from '../utils/animation';
 
 export default class ArrowButtonRight extends React.Component {
 
