@@ -6,6 +6,7 @@ const Container = connect(
   (state) => {
     const props = {
       uiState: state.uiState,
+      points: state.points,
     };
     return props;
   },

@@ -7,18 +7,23 @@ export default class Graph extends React.Component{
     this.updateGraph();
   }
 
+  componentDidMount(){
+    this.updateGraph();
+  }
+
   updateGraph = () => {
 
     const { points } = this.props;
 
-    var data = points.map(p => {
-      return { date: p.date.getTime(), value: p.value }
+    const data = points.map(p => {
+      const date = new Date(p.date).getTime();
+      return { date, value: p.value }
     });
     
     const parentNode = document.getElementById("graph").parentElement;
-    var width = parentNode.clientWidth - 20;
-    var height = parentNode.clientHeight - 20;
-    var margin = 50;
+    const width = parentNode.clientWidth - 20;
+    const height = parentNode.clientHeight - 20;
+    const margin = 50;
 
     // removing previous SVG
     const node = document.getElementById("graph");
@@ -27,17 +32,17 @@ export default class Graph extends React.Component{
     }
 
     /* Scale */
-    var xScale = d3.scaleTime()
+    const xScale = d3.scaleTime()
       .domain(d3.extent(data, d => d.date))
       .range([0, width-margin]);
     
-    var yScale = d3.scaleLinear()
+      const yScale = d3.scaleLinear()
       .domain([d3.min(data, d => d.value), d3.max(data, d => d.value)])
       .range([height-margin, 0]);
   
 
     /* Add SVG */
-    var svg = d3.select("#graph").append("svg")
+    const svg = d3.select("#graph").append("svg")
       .classed("svg-chart", true)
       .attr("width", (width+margin)+"px")
       .attr("height", (height+margin)+"px")
@@ -46,7 +51,7 @@ export default class Graph extends React.Component{
     
     
     /* Add line into SVG */
-    var line = d3.line()
+    const line = d3.line()
       .x(d => xScale(d.date))
       .y(d => yScale(d.value));
     
@@ -84,8 +89,8 @@ export default class Graph extends React.Component{
     
     
     /* Add Axis into SVG */
-    var xAxis = d3.axisBottom(xScale).ticks(5);
-    var yAxis = d3.axisLeft(yScale).ticks(5);
+    const xAxis = d3.axisBottom(xScale).ticks(5);
+    const yAxis = d3.axisLeft(yScale).ticks(5);
 
     svg.append("g")
       .attr("class", "x axis")

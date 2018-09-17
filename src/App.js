@@ -9,6 +9,11 @@ import Visual from './components/Visual';
 
 class App extends Component {
 
+  componentWillUpdate(nextProps, nextState){
+    localStorage.setItem('points', JSON.stringify(nextProps.points));
+    localStorage.setItem('uiState', JSON.stringify(nextProps.uiState));
+  }
+
   render() {
     const { previous, next } = this.props.uiState;
     const leftPanelClasses = getAnimationClasses(previous, next, 'LeftPanel');

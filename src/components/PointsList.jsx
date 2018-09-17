@@ -11,12 +11,13 @@ export default class PointsList extends React.Component {
     const points = this.props.points;
     return (
       <ul className="list-group">
-        {points.map(({ id, value, date }) => (
-          <li key={id} className="list-group-item d-flex justify-content-end">
-            <div className="mr-auto">{`${date.getMinutes()}:${date.getSeconds()}:${date.getMilliseconds()} val: ${value}`}</div>
+        {points.map(({ id, value, date }) => {
+          return <li key={id} className="list-group-item d-flex justify-content-end">
+            <div className="mr-auto">
+            {`${ new Date(date).getMinutes()}:${new Date(date).getSeconds()}:${new Date(date).getMilliseconds()} val: ${value}`}</div>
             <button className="btn btn-secondary" onClick={this.removePoint(id)}>REMOVE</button>
           </li>
-        ))}
+        })}
       </ul>);
   }
 
