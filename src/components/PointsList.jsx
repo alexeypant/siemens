@@ -13,7 +13,7 @@ export default class PointsList extends React.Component {
       <ul className="list-group">
         {points.map(({ id, value, date }) => (
           <li key={id} className="list-group-item d-flex justify-content-end">
-            <div className="mr-auto">{`${date.getMinutes()}:${date.getSeconds()} - ${value}`}</div>
+            <div className="mr-auto">{`${date.getMinutes()}:${date.getSeconds()}:${date.getMilliseconds()} val: ${value}`}</div>
             <button className="btn btn-secondary" onClick={this.removePoint(id)}>REMOVE</button>
           </li>
         ))}

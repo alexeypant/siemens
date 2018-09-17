@@ -12,7 +12,7 @@ export default class Graph extends React.Component{
     const { points } = this.props;
 
     var data = points.map(p => {
-      return { date: p.date.getSeconds(), value: p.value }
+      return { date: p.date.getTime(), value: p.value }
     });
     
     const parentNode = document.getElementById("graph").parentElement;
@@ -25,7 +25,6 @@ export default class Graph extends React.Component{
     while (node && node.firstChild) {
       node.removeChild(node.firstChild);
     }
-
 
     /* Scale */
     var xScale = d3.scaleTime()
@@ -96,7 +95,7 @@ export default class Graph extends React.Component{
       .attr("x", 15)
       .attr("transform", `translate(${width - 2 * margin}, -10)`)
       .attr("fill", "#000")
-      .text("Milliseconds");
+      .text("Time");
     
     svg.append("g")
       .attr("class", "y axis")
