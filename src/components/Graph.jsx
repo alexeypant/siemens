@@ -20,10 +20,13 @@ export default class Graph extends React.Component{
       return { date, value: p.value }
     });
     
-    const parentNode = document.getElementById("graph").parentElement;
-    const width = parentNode.clientWidth - 20;
-    const height = parentNode.clientHeight - 20;
-    const margin = 50;
+    // const parentNode = document.getElementById("graph").parentElement;
+    // const width = parentNode.clientWidth - 20;
+    // const height = parentNode.clientHeight - 20;
+
+    const width = 400;
+    const height = 350;
+    const margin = 40;
 
     // removing previous SVG
     const node = document.getElementById("graph");
@@ -44,6 +47,7 @@ export default class Graph extends React.Component{
     /* Add SVG */
     const svg = d3.select("#graph").append("svg")
       .classed("svg-chart", true)
+      .attr("viewBox", "0 0 440 400")
       .attr("width", (width+margin)+"px")
       .attr("height", (height+margin)+"px")
       .append('g')

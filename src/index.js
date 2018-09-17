@@ -8,8 +8,6 @@ import _ from 'lodash';
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
-
-
 const points = localStorage.getItem('points') ? JSON.parse(localStorage.getItem('points')) : {}
 const uiState = localStorage.getItem('uiState') 
   ? JSON.parse(localStorage.getItem('uiState')) 
