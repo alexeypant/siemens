@@ -19,10 +19,6 @@ export default class Graph extends React.Component{
       const date = new Date(p.date).getTime();
       return { date, value: p.value }
     });
-    
-    // const parentNode = document.getElementById("graph").parentElement;
-    // const width = parentNode.clientWidth - 20;
-    // const height = parentNode.clientHeight - 20;
 
     const width = 400;
     const height = 350;
