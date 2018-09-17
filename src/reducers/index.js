@@ -13,13 +13,11 @@ const points = handleActions({
   },
 }, {});
 
-
 const uiState = handleActions({
-  [actions.updateUI](state, { payload: { uiState} }) {
-    return uiState;
+  [actions.updateUI](state, { payload: newState }) {
+    return newState;
   },
 }, {});
-
 
 export default combineReducers({
   form: formReducer,

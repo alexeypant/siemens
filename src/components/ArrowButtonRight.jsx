@@ -1,11 +1,15 @@
 import React from 'react';
+import { getNextUIState } from './animation';
 
 export default class ArrowButtonRight extends React.Component {
 
   onClick = (e) => {
     e.preventDefault();
-    this.props.handleClick();
+    const previous = this.props.uiState.next;
+    const next = getNextUIState(previous, 'rightSideButton');
+    this.props.updateUI({ previous, next });
   }
+
   render(){
     const { className } = this.props;
     return(

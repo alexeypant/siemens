@@ -1,44 +1,16 @@
 import React, { Component } from 'react';
-import { getAnimationClasses, getNextUIState } from './components/animation';
+import { getAnimationClasses } from './components/animation';
 import './App.css';
 import Panel from './components/Panel';
-import ArrowButtonLeft from './components/ArrowButtonLeft';
-import ArrowButtonRight from './components/ArrowButtonRight';
+import ArrowButtonLeft from './containers/ArrowButtonLeft';
+import ArrowButtonRight from './containers/ArrowButtonRight';
 import Visual from './components/Visual';
 
 
 class App extends Component {
-  state = {
-    uiState: {
-      previous: 'InitialState',
-      next: 'InitialState',
-    }
-  }
-
-  onCloseLeftClick = () => {
-    const previous = this.state.uiState.next;
-    const next = getNextUIState(previous, 'leftSideButton');
-    this.setState({
-      uiState: {
-        previous,
-        next,
-      }
-    });
-  }
-
-  onCloseRightClick = () => {
-    const previous = this.state.uiState.next;
-    const next = getNextUIState(previous, 'rightSideButton');
-    this.setState({
-      uiState: {
-        previous,
-        next,
-      }
-    });
-  }
 
   render() {
-    const { previous, next } = this.state.uiState;
+    const { previous, next } = this.props.uiState;
     const leftPanelClasses = getAnimationClasses(previous, next, 'LeftPanel');
     const rightPanelClasses = getAnimationClasses(previous, next, 'RightPanel');
     const centralPanelClasses = getAnimationClasses(previous, next, 'CentralPanel');
@@ -49,13 +21,13 @@ class App extends Component {
       <div>
         <div className="row">
           <Panel className={leftPanelClasses}>
-            <ArrowButtonLeft handleClick={this.onCloseLeftClick} className={leftButtonClasses} />  
+            <ArrowButtonLeft className={leftButtonClasses} />  
           </Panel>
           <Panel className={centralPanelClasses}>
             <Visual />
           </Panel>
           <Panel className={rightPanelClasses}>
-            <ArrowButtonRight handleClick={this.onCloseRightClick} className={rightButtonClasses} />
+            <ArrowButtonRight className={rightButtonClasses} />
           </Panel>
         </div>
       </div>

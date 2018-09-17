@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Component from '../components/ArrowButtonLeft';
+import Component from '../App';
 import * as actionCreators from '../actions';
 
 const Container = connect(
