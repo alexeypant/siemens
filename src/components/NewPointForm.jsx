@@ -18,7 +18,7 @@ class NewTaskForm extends React.Component {
                 <div className="input-group-prepend">
                   <div className="input-group-text">Value:</div>
                 </div>
-                <Field name="value" required component="input" type="text" />
+                <Field name="value" required component="input" type="number" />
               </div>
             </div>
           </div>

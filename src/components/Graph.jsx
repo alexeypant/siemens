@@ -16,8 +16,12 @@ export default class Graph extends React.Component{
     });
       
     var width = 500;
-    var height = 300;
+    var height = 400;
     var margin = 50;
+
+
+  //  const width = document.getElementsByClassName("chart").clientWidth;
+  //  const height = document.getElementsByClassName("chart").clientWidth;
     
     
     /* Scale */
@@ -38,6 +42,7 @@ export default class Graph extends React.Component{
 
     /* Add SVG */
     var svg = d3.select("#graph").append("svg")
+      .classed("svg-chart", true)
       .attr("width", (width+margin)+"px")
       .attr("height", (height+margin)+"px")
       .append('g')
