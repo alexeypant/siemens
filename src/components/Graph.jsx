@@ -20,7 +20,7 @@ export default class Graph extends React.Component{
     });
 
     const width = 400;
-    const height = 350;
+    const height = 330;
     const margin = 40;
 
     // removing previous SVG
