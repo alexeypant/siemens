@@ -14,31 +14,28 @@ export default class Graph extends React.Component{
     var data = points.map(p => {
       return { date: p.date.getSeconds(), value: p.value }
     });
-      
-    var width = 500;
-    var height = 400;
+    
+    const parentNode = document.getElementById("graph").parentElement;
+    var width = parentNode.clientWidth - 20;
+    var height = parentNode.clientHeight - 20;
     var margin = 50;
 
+    // removing previous SVG
+    const node = document.getElementById("graph");
+    while (node && node.firstChild) {
+      node.removeChild(node.firstChild);
+    }
 
-  //  const width = document.getElementsByClassName("chart").clientWidth;
-  //  const height = document.getElementsByClassName("chart").clientWidth;
-    
-    
+
     /* Scale */
     var xScale = d3.scaleTime()
       .domain(d3.extent(data, d => d.date))
       .range([0, width-margin]);
     
     var yScale = d3.scaleLinear()
-      .domain([0, d3.max(data, d => d.value)])
+      .domain([d3.min(data, d => d.value), d3.max(data, d => d.value)])
       .range([height-margin, 0]);
-    
-    
-    // removing previous SVG
-    const node = document.getElementById("graph");
-    while (node && node.firstChild) {
-      node.removeChild(node.firstChild);
-    }
+  
 
     /* Add SVG */
     var svg = d3.select("#graph").append("svg")
@@ -90,11 +87,16 @@ export default class Graph extends React.Component{
     /* Add Axis into SVG */
     var xAxis = d3.axisBottom(xScale).ticks(5);
     var yAxis = d3.axisLeft(yScale).ticks(5);
-    
+
     svg.append("g")
       .attr("class", "x axis")
       .attr("transform", `translate(0, ${height-margin})`)
-      .call(xAxis);
+      .call(xAxis)
+      .append('text')
+      .attr("x", 15)
+      .attr("transform", `translate(${width - 2 * margin}, -10)`)
+      .attr("fill", "#000")
+      .text("Milliseconds");
     
     svg.append("g")
       .attr("class", "y axis")
@@ -103,7 +105,7 @@ export default class Graph extends React.Component{
       .attr("y", 15)
       .attr("transform", "rotate(-90)")
       .attr("fill", "#000")
-      .text("Total values");
+      .text("Values");
   }
 
     render(){

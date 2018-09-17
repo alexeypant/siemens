@@ -97,25 +97,29 @@
 
 .buttonLeftMovingLeft {
   animation-name: buttonLeftMovingLeft, buttonLeftRotatingLeft;
-  animation-duration: 2s;
+  animation-duration: 1s;
+  animation-timing-function: easeInOutExpo;
   animation-fill-mode: forwards;
 }
 
 .buttonLeftMovingRight {
   animation-name: buttonLeftMovingRight, buttonLeftRotatingRight;
-  animation-duration: 2s;
+  animation-duration: 1s;
+  animation-timing-function: easeInOutExpo;
   animation-fill-mode: forwards;
 }
 
 .buttonRightMovingRight {
   animation-name: buttonRightMovingRight, buttonRightRotatingRight;
-  animation-duration: 2s;
+  animation-duration: 1s;
+  animation-timing-function: easeInOutExpo;
   animation-fill-mode: forwards;
 }
 
 .buttonRightMovingLeft {
   animation-name: buttonRightMovingLeft, buttonRightRotatingLeft;
-  animation-duration: 2s;
+  animation-duration: 1s;
+  animation-timing-function: easeInOutExpo;
   animation-fill-mode: forwards;
 }
 
@@ -157,7 +161,8 @@
   display: block;
   top: 40px;
   width: 100%;
-  overflow: hidden;
+  height: 90%;
+  overflow: scroll;
 }
 
 .line {
