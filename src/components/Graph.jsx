@@ -33,11 +33,38 @@ export default class Graph extends React.Component{
     const xScale = d3.scaleTime()
       .domain(d3.extent(data, d => d.date))
       .range([0, width-margin]);
-    
-      const yScale = d3.scaleLinear()
-      .domain([d3.min(data, d => d.value), d3.max(data, d => d.value)])
-      .range([height-margin, 0]);
+
+
+    // seems like d3.extent and d3.min d3.max has some limitations.
+    // it returns incorrect values while giving it the array with big difference between values.
+    // 
+
+    // const yScale = d3.scaleLinear()
+    //   .domain(d3.extent(data, d => d.value))
+    //   .range([height-margin, 0]);
+
+    // const yScale = d3.scaleLinear()
+    // .domain([d3.min(data, d => d.value), d3.max(data, d => d.value)])
+    // .range([height-margin, 0]);
+
+    // if we calculate the min and max ourselves - it's working
   
+
+      const yMinMaxRange01 = d3.extent(data, d => d.value);
+      const yMinMaxRange02 = [d3.min(data, d => d.value), d3.max(data, d => d.value)];
+      const sortedValues = data.map(p => p.value).sort((a,b)=>a-b);
+      const yMinMaxRange03 = [sortedValues[0], sortedValues[sortedValues.length - 1]];
+
+      console.log(yMinMaxRange01);  // you can see the effect
+      console.log(yMinMaxRange02);  // of three different ways of the data calculation
+      console.log(yMinMaxRange03);  // in the console
+    
+
+      // now, everything works 
+      const yScale = d3.scaleLinear()
+      .domain([sortedValues[0], sortedValues[sortedValues.length - 1]])
+      .range([height-margin, 0]);
+
 
     /* Add SVG */
     const svg = d3.select("#graph").append("svg")
